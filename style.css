@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@900&display=swap');
+
+/* font-family: 'Andika New Basic',
+sans-serif; */
+/* font-family: 'Montserrat',
+sans-serif; */
+/*font-family: 'Catamaran',
+sans-serif; */
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 10vw 0 10vw;
+    background-color: #0D0D0D;
+    color: #F23568;
+    font-family: 'Andika New Basic', sans-serif;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+section.slots {
+    display: flex;
+}
+
+div.slot {
+    flex-grow: 1;
+    height: 30vh;
+    border: 3px solid #F2A25C;
+    margin: 10px;
+}
+
+div.jackpot {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    height: 150px;
+    font-family: 'Catamaran', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    line-height: 150px;
+    color: #F2C36B;
+    /* text-shadow: 0rem -0.4rem 4px #8C203D,
+        0rem 0.4rem 4px #8C203D,
+        0.4rem 0 4px #8C203D,
+        -0.4rem 0 4px #8C203D; */
+}
+
+div.jackpot.active {
+    display: block;
+    animation-name: WinAnimation;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes WinAnimation {
+    0% {
+        transform: translate(-50%, -50%);
+        text-shadow: 0 0 0 #8C203D;
+    }
+
+    15% {
+        transform: translateX(-50%) translateY(calc(-50% - 0.5em));
+        text-shadow: 0 0.15em 0 #8C203D,
+            0 -0.15em 0 #8C203D;
+    }
+
+    30% {
+        transform: translateX(-50%) translateY(calc(-50% + 0.2em));
+        text-shadow: 0 -0.15em 0 #8C203D,
+            0 0.15em 0 #8C203D;
+    }
+
+    45% {
+        transform: translateX(-50%) translateY(calc(-50% - 0.1em));
+        text-shadow: 0 0.05em 0 #8C203D,
+            0 -0.05em 0 #8C203D;
+    }
+
+    60% {
+        transform: translate(-50%, -50%);
+        text-shadow: 0 0 0 #8C203D;
+    }
+}
+
+section.start {
+    margin-top: 100px;
+}
