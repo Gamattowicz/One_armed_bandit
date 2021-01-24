@@ -116,6 +116,17 @@ input.bid {
     color: #F23568;
     text-transform: uppercase;
     font-family: 'Andika New Basic', sans-serif;
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
 }
 
 ::placeholder {
@@ -135,6 +146,8 @@ button.play {
     font-weight: 900;
     border-radius: 0.5em;
     transition: .5s;
+    cursor: pointer;
+    outline: none;
 }
 
 button.play:hover {
