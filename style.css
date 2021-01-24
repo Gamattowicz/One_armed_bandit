@@ -98,5 +98,57 @@ div.jackpot.active {
 }
 
 section.start {
-    margin-top: 100px;
+    display: flex;
+    width: 70%;
+    height: 70px;
+    margin: 100px auto 50px auto;
+}
+
+input.bid {
+    flex-grow: 1;
+    flex-basis: 50%;
+    margin: 5px 20px 5px 5px;
+    border: 3px solid #F2A25C;
+    border-radius: 15px;
+    background-color: #0D0D0D;
+    font-size: 30px;
+    text-align: center;
+    color: #F23568;
+    text-transform: uppercase;
+    font-family: 'Andika New Basic', sans-serif;
+}
+
+::placeholder {
+    color: #F23568;
+}
+
+button.play {
+    flex-grow: 1;
+    flex-basis: 50%;
+    margin: 5px 5px 5px 20px;
+    border: 3px solid #F2A25C;
+    background-color: #F23568;
+    font-size: 40px;
+    letter-spacing: 5px;
+    color: #0D0D0D;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 900;
+    border-radius: 0.5em;
+    transition: .5s;
+}
+
+button.play:hover {
+    transform: scale(1.15);
+}
+
+section.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 70px 70px;
+}
+
+section.stats div {
+    text-align: center;
+    font-size: 35px;
+    text-transform: uppercase;
 }
