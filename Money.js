@@ -22,5 +22,3 @@ class Money {
         }
     }
 }
-
-const money = new Money(500)

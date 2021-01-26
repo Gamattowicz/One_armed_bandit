@@ -21,5 +21,3 @@ class InfoGame {
         return [games, wins, losses]
     }
 }
-
-const infoGame = new InfoGame()

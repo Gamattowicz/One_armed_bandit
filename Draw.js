@@ -13,5 +13,3 @@ class Draw {
         }
     }
 }
-
-const draw = new Draw()
