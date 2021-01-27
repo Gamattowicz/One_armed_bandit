@@ -4,11 +4,9 @@ class Result {
         else return false
     }
     static checkMoney(result, bid) {
-        if (result === 'win') {
-            return bid * 3;
-        } else {
-            return 0;
-        }
-
+        if (result) return bid * 3;
+        else return 0;
     }
+
+
 }

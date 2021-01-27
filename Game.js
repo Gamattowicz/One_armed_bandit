@@ -1,7 +1,7 @@
 class Game {
     constructor(money) {
 
-        this.money = new Money(money)
+        this.money = new Money(money);
         this.infoGame = new InfoGame();
 
         document.querySelector('button.play').addEventListener('click', this.startGame.bind(this));
@@ -13,6 +13,7 @@ class Game {
         this.bid = document.querySelector('input.bid');
         this.jackpot = document.querySelector('div.jackpot');
 
+        this.moneyGame.textContent = this.money.showMoney();
     }
 
     startGame() {
@@ -29,7 +30,7 @@ class Game {
         } else {
             this.jackpot.classList.remove('active');
         }
-        const cash = Result.checkMoney(resultOfGame, this.bid.value);
+
         console.log(resultOfGame);
 
 
@@ -38,7 +39,22 @@ class Game {
         this.numberGame.textContent = statistics[0];
         this.winsGame.textContent = statistics[1];
         this.lossesGame.textContent = statistics[2];
-        this.moneyGame.textContent = this.money.showMoney();
+
+
+        if (this.money.canPlay(this.bid.value)) {
+            const cash = Result.checkMoney(resultOfGame, Math.floor(this.bid.value));
+
+            console.log('start ' + cash + resultOfGame + this.bid.value);
+            if (cash > 0) {
+                this.money.changeMoney(Math.floor(this.bid.value), '+');
+            } else if (cash <= 0) {
+                this.money.changeMoney(Math.floor(this.bid.value), '-');
+            }
+
+            this.moneyGame.textContent = this.money.showMoney();
+        } else {
+            alert("Sorry, you don't have enough money");
+        }
     }
 }
 
