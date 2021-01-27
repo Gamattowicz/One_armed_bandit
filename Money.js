@@ -11,14 +11,13 @@ class Money {
                 if (type === '+') {
                     return _cash += money;
                 } else if (type === '-') {
-                    console.log(_cash + 'jest');
-                    return _cash = _cash - money;
+                    return _cash -= money;
                 } else {
                     throw new Error('You can only add or subtract from your wallet')
                 }
             } else {
                 console.log(typeof money);
-                throw new Error('You have to enter a number!')
+                alert('You have to enter a number!')
             }
         }
     }

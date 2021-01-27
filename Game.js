@@ -20,31 +20,13 @@ class Game {
 
         this.draw = new Draw();
         const slots = this.draw.resultsOfDraw;
-        this.boardsGame.forEach((board, index) => {
-            board.style.backgroundColor = slots[index]
-        })
 
         const resultOfGame = Result.checkWin(slots);
-        if (resultOfGame) {
-            this.jackpot.classList.add('active');
-        } else {
-            this.jackpot.classList.remove('active');
-        }
 
-        console.log(resultOfGame);
-
-
-        this.infoGame.addResultPlay(resultOfGame, this.bid.value);
-        const statistics = this.infoGame.showInfoGame();
-        this.numberGame.textContent = statistics[0];
-        this.winsGame.textContent = statistics[1];
-        this.lossesGame.textContent = statistics[2];
-
+        if (this.bid.value < 1) return alert('You have to enter a positive number greater than or equal to 1!');
 
         if (this.money.canPlay(this.bid.value)) {
             const cash = Result.checkMoney(resultOfGame, Math.floor(this.bid.value));
-
-            console.log('start ' + cash + resultOfGame + this.bid.value);
             if (cash > 0) {
                 this.money.changeMoney(Math.floor(this.bid.value), '+');
             } else if (cash <= 0) {
@@ -53,8 +35,26 @@ class Game {
 
             this.moneyGame.textContent = this.money.showMoney();
         } else {
-            alert("Sorry, you don't have enough money");
+            return alert("Sorry, you don't have enough money");
         }
+
+        this.boardsGame.forEach((board, index) => {
+            board.style.backgroundColor = slots[index]
+        })
+
+        if (resultOfGame) {
+            this.jackpot.classList.add('active');
+        } else {
+            this.jackpot.classList.remove('active');
+        }
+
+        this.infoGame.addResultPlay(resultOfGame, this.bid.value);
+        const statistics = this.infoGame.showInfoGame();
+        this.numberGame.textContent = statistics[0];
+        this.winsGame.textContent = statistics[1];
+        this.lossesGame.textContent = statistics[2];
+
+        this.bid.value = '';
     }
 }
 
