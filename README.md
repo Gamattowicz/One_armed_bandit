@@ -26,7 +26,8 @@ Check demo here: [Game](https://gamattowicz.github.io/One_armed_bandit/)
 Project is finished.
 
 ## Inspiration
-This game is based on JavaScript Exercise from Samuraj Programowania's course [@SamurajProgramowania](https://www.udemy.com/course/kurs-programowanie-w-javascript/)  Jackpot animation is inspired by Krzysztof Furtak's video tutorial [@KrzysztofFurtak](https://www.youtube.com/watch?v=HDlWDJ6-ZpI)
+This game is based on JavaScript Exercise from Samuraj Programowania's course [@SamurajProgramowania](https://www.udemy.com/course/kurs-programowanie-w-javascript/)<br/>
+Jackpot animation is inspired by Krzysztof Furtak's video tutorial [@KrzysztofFurtak](https://www.youtube.com/watch?v=HDlWDJ6-ZpI)
 
 ## Contact
 Created by [@Gamattowicz](https://github.com/Gamattowicz) - feel free to contact me!
